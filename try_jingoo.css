@@ -1,0 +1,120 @@
+* {
+    margin: 0 ;
+    padding: 0 ;
+    box-sizing: border-box ;
+}
+
+body {
+    overflow-y: scroll;
+}
+
+.tab:not(.active) { display: none ; }
+
+#navs {
+    display: flex ;
+    line-height: 50px ;
+    text-align: center ;
+}
+
+.nav {
+    flex: 1 1 0 ;
+    border-bottom: 3px solid transparent ;
+    color: #888 ;
+    cursor: pointer;
+}
+
+.nav.active {
+    border-bottom-color: red ;
+    color: #2D3335 ;
+}
+
+#status {
+    width: 100% ;
+    height: 0 ;
+}
+
+#status.error {
+    background-color: red ;
+    color: white ;
+    z-index: 1 ;
+    height: auto ;
+    padding: 10px 20px ;
+}
+
+#editor-outer-container {
+    position: relative ;
+    padding: 10px ;
+    background-color: #2D3335 ;
+    overflow: hidden ;
+}
+
+#editor-inner-container {
+    margin-left: calc(5ex - 10px) ;
+    position: relative ;
+    overflow: hidden ;
+}
+
+#models, #input {
+    border: none ;
+    outline: none ;
+    box-shadow: none ;
+    resize: none ;
+    width: 100% ;
+}
+
+#models {
+    height: calc(100vh - 53px) ;
+    color: #E3E5E2 ;
+    padding: 10px ;
+    background-color: #2D3335 ;
+}
+
+#input {
+    background-color: transparent ;
+    color: transparent ;
+    caret-color: white ;
+    overflow: hidden ;
+    position: absolute ;
+    top: 0 ;
+    left: 0 ;
+}
+
+#input.error {
+    color: red ;
+    background-color: #2D3335 ;
+}
+
+#highlight {
+    color: #E3E5E2 ;
+    z-index: -1 ;
+    min-height: 100vh ;
+}
+
+
+#line-numbers {
+    position: absolute ;
+    top: 10px ;
+    left: 10px ;
+    width: 5ex ;
+    padding-right: 2ex ;
+    text-align: right ;
+    background-color: #2D3335 ;
+    color: #888 ;
+    overflow: hidden ;
+    height: 100% ;
+}
+
+#tab-preview {
+    padding: 20px ;
+}
+
+#output {
+    border: 1px solid #2D3335 ;
+    backgroud-color: white ;
+    padding: 30px ;
+}
+
+.jghl-kw { color: #E090D7 ; }
+.jghl-expr { color: #8CC4FC ; }
+.jghl-stmt { color: #F9E94F ; }
+.jghl-str { color: #FBAF3E ; }

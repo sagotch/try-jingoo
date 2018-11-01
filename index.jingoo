@@ -1,0 +1,34 @@
+{% set rows=300 %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Try jingoo</title>
+    <link rel="stylesheet" href="try_jingoo.css">
+  </head>
+  <body>
+    <div id="status">Loading...</div>
+    <div id="navs">
+      <div id="nav-models" class="nav">Models</div>
+      <div id="nav-editor" class="nav active">Input</div>
+      <div id="nav-preview" class="nav">Preview</div>
+    </div>
+    <div id="tabs">
+      <div id="tab-models" class="tab">
+        <textarea id="models">{{ eval("{% rawinclude 'models' %}") }}</textarea>
+      </div>
+      <div id="tab-editor" class="tab active">
+        <div id="editor-outer-container">
+          <pre id="line-numbers">{% for i in range(1, 300) %}<div>{{i}}</div>{% endfor %}</pre>
+          <div id="editor-inner-container">
+	    <pre id="highlight"></pre>
+	    <textarea id="input" spellcheck="false" rows="{{ rows }}">{{ eval("{% rawinclude 'input' %}") }}</textarea>
+          </div>
+        </div>
+      </div>
+      <div id="tab-preview" class="tab">
+        <div id="output"></div>
+      </div>
+    <script type="text/javascript" src="try_jingoo.js"></script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+{% function sex (s) %}
+  {%- if s == 'F' -%}a woman
+  {%- elif s == 'M' -%}a man
+  {% else %}neither a man nor a woman
+  {% endif %}
+{%- endfunction %}
+{% function empty_age(p) %}{{ p.age is undefined }}{% endfunction %}
+
+<ul>
+  {% macro present (p) %}
+    <li>
+      Hello, I am <b>{{ p.name }}</b>,
+      {%- if p.age %}<i> {{ p.age }} years old</i>,{% endif %}
+      and I am {{ sex (p.sex) }}.
+    </li>
+  {% endmacro %}
+</ul>
+
+{% for p in persons %}
+  <p>{{ present (p) }}</p>
+{% endfor %}
+
+{% set older = max (attribute="age", reject (empty_age, persons)) %}
+
+<p>{{ older.name }} is the older.</p>

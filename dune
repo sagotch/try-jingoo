@@ -1,0 +1,9 @@
+(ocamllex (modules jg_highlight) )
+
+(executable
+ (name try_jingoo)
+ (js_of_ocaml (flags +toplevel.js +dynlink.js))
+ (preprocess (pps js_of_ocaml-ppx))
+ (libraries js_of_ocaml jingoo)
+ (modules try_jingoo jg_highlight)
+)

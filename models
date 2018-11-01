@@ -1,0 +1,8 @@
+{{
+{ persons: [
+  { name: "Alice", age: 34, sex: "F" },
+  { name: "Bob", age:  42, sex: "M" },
+  { name: "Carol", sex: "F" }
+  ]
+}
+}}
